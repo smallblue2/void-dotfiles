@@ -11,7 +11,7 @@ export QT_QPA_PLATFORM=wayland-egl
 export ELM_DISPLAY=wl
 export SDL_VIDEODRIVER=wayland
 export MOZ_ENABLE_WAYLAND=1
-export WLR_NO_HARDWARE_CORSORS=1
+export WLR_NO_HARDWARE_CURSORS=1
 
 # Cursors
 export XCURSOR_SIZE=48
