@@ -1,0 +1,14 @@
+# Variables
+set $mod Mod4
+set $term foot
+set $browser firefox
+set $pdfreader zathura
+
+# Includes
+include $HOME/.config/sway/input.conf
+include $HOME/.config/sway/output.conf
+include $HOME/.config/sway/keymaps.conf
+include $HOME/.config/sway/workspaces.conf
+include $HOME/.config/sway/appearance.conf
+include $HOME/.config/sway/bar.conf
+include $HOME/.config/sway/exec.conf
