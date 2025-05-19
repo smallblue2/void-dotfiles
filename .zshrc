@@ -16,3 +16,9 @@ compinit
 export GTK_THEME=Gruvbox-Material-Dark-HIDPI
 
 alias ls="ls --color"
+
+autoload -Uz vcs_info
+precmd() { vcs_info }
+zstyle ':vcs_info:git:*' formats '%b '
+setopt PROMPT_SUBST
+PROMPT='%F{green}%* %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f$ '

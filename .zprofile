@@ -17,10 +17,18 @@ export WLR_NO_HARDWARE_CURSORS=1
 export XCURSOR_SIZE=48
 export XCURSOR_THEME=default
 
+# Default Applications
+export EDITOR=hx
+export VISUAL=$EDITOR
+export BROWSER=firefox
+export PDFVIEWER=zathura
+export TERM=foot
+export TERMINAL=foot
+
 # GTK Theme
 export GTK_THEME=Gruvbox-Material-Dark-HIDPI
 
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_ed25519
+[[ -z $SSH_AUTH_SOCK ]] && eval "$(ssh-agent -s)" >/dev/null
+ssh-add -q ~/.ssh/id_ed25519 >/dev/null
 
 dbus-run-session sway
