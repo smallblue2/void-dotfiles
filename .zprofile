@@ -5,17 +5,18 @@ export XDG_CURRENT_DESKTOP=sway
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_PICTURES_DIR=$HOME/Pictures
+export XDG_DATA_DIRS=/usr/share:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share
 
 # Wayland Stuff
 export QT_QPA_PLATFORM=wayland-egl
 export ELM_DISPLAY=wl
-export SDL_VIDEODRIVER=wayland
+export SDL_VIDEODRIVER=wayland,x11
 export MOZ_ENABLE_WAYLAND=1
 export WLR_NO_HARDWARE_CURSORS=1
 
 # Cursors
-export XCURSOR_SIZE=48
-export XCURSOR_THEME=default
+export XCURSOR_SIZE=24
+export XCURSOR_THEME=Adwaita
 
 # Default Applications
 export EDITOR=hx

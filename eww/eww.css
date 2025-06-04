@@ -1,0 +1,11 @@
+.background {
+  background: transparent;
+}
+
+
+.volume-box {
+  padding: 10px;
+  background-color: #252423;
+  border-radius: 20px;
+  border: 1px solid #d4be98;
+}

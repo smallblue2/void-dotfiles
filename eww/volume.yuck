@@ -1,0 +1,28 @@
+(defvar seconds-alive-for 2)
+(defvar last-changed 0)
+(defvar current-volume 0)
+
+(defwindow volume :class volume-window
+    :monitor 0
+    :geometry (geometry :x "0%"
+               :y "100px"
+               :width "40%"
+               :height "60px"
+               :anchor "bottom center")
+    :stacking "overlay"
+    :exclusive false
+    :focusable "none"
+  (volume-slider
+    :vol current-volume))
+
+(defwidget volume-slider [vol]
+  (box :orientation "horizontal" :class "volume-box"
+    (scale :onchange "wpctl set-volume @DEFAULT_AUDIO_SINK@ {}% ; eww update last-changed=$(date +%s)"
+      :draw-value true
+      :value-pos "left"
+      :value vol
+      :min 0
+      :max 101
+      :round-digits 0
+      :active true
+      )))

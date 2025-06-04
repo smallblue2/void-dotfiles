@@ -320,9 +320,9 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#0d3138"
-    foreground = "#7daea3"
-    frame_color = "#7daea3"
+    background = "#282828"
+    foreground = "#ddc7a1"
+    frame_color = "#ddc7a1"
     timeout = 10
     # Icon for notifications with low urgency
     default_icon = dialog-information
@@ -344,6 +344,10 @@
     override_pause_level = 60
     # Icon for notifications with critical urgency
     default_icon = zombie-panic-source
+
+[Spotify]
+    appname=Spotify
+
 
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.

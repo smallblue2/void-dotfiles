@@ -16,6 +16,8 @@ compinit
 export GTK_THEME=Gruvbox-Material-Dark-HIDPI
 
 alias ls="ls --color"
+alias fastfetch="fastfetch --raw $HOME/Pictures/void.sixel --logo-height 0 --logo-width 50 --logo-padding-left 2 --logo-padding-top 3"
+alias ff="fastfetch"
 
 autoload -Uz vcs_info
 precmd() { vcs_info }
