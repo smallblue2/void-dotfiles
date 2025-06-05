@@ -35,18 +35,18 @@ if (( $(echo "scale=2; $vol_frac >= 1.0" | bc ) )); then
 fi
 
 # Normalise the volume between 0 - 100
-vol_norm=$(echo "scale=2; $vol_frac * 100" | bc)
+vol_norm=$(printf '%.0f' "$(bc -l <<< "$vol_frac * 100")")
 
 # Update yuck
-eww update current-volume=$vol_norm last-changed=$(date +%s)
+eww update current-volume=$vol_norm vol-last-changed=$(date +%s)
 
 # ONE (likely first) waiter handles open and close
 (
   # Lock the open file descriptor, otherwise exit gracefully
   flock -n 9 || exit 0
   eww open volume
-  alive_for=$(eww get seconds-alive-for)
-  while (( $(date +%s) - $(eww get last-changed) < $alive_for )); do
+  alive_for=$(eww get vol-seconds-alive-for)
+  while (( $(date +%s) - $(eww get vol-last-changed) < $alive_for )); do
     sleep 0.2
   done
   eww close volume
