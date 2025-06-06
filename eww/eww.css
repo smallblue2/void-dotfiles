@@ -2,7 +2,6 @@
   background: transparent;
 }
 
-
 .volume-box {
   padding: 0 10px 0 0;
   background-color: #252423;
@@ -17,5 +16,21 @@
 }
 
 .volume-label {
+  padding: 0 10px 0 10px;
+}
+
+.bright-box {
+  background-color: #252423;
+  border-radius: 20px;
+  border: 1px solid #d4be98;
+}
+
+.bright-icon {
+  font-size: 20px;
+  padding: 0 10px 0 20px;
+  margin: 0;
+}
+
+.bright-label {
   padding: 0 10px 0 10px;
 }

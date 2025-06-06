@@ -1,0 +1,51 @@
+(defvar bright-seconds-alive-for 2)
+(defvar bright-last-changed 0)
+(defvar current-brightness 0)
+
+(defwindow brightness :class brightness-window
+    :monitor 0
+    :geometry (geometry :x "0%"
+               :y "100px"
+               :width "40%"
+               :height "60px"
+               :anchor "bottom center")
+    :stacking "overlay"
+    :exclusive false
+    :focusable "none"
+  (brightness-slider
+    :brightness current-brightness))
+
+(defwidget brightness-slider [brightness]
+  (box
+    :orientation "horizontal"
+    :class "bright-box"
+    :space-evenly false
+    :hexpand true
+    (label
+      :text {brightness == 0 ? "" :
+        brightness < 10 ? "" :
+        brightness < 20 ? "" :
+        brightness < 30 ? "" :
+        brightness < 40 ? "" :
+        brightness < 50 ? "" :
+        brightness < 60 ? "" :
+        brightness < 70 ? "" :
+        brightness < 80 ? "" :
+        brightness < 90 ? "" :
+        brightness < 100 ? "" : ""}
+      :class "bright-icon"
+      :hexpand false)
+    (scale :onchange "brightnessctl set {}% ; eww update bright-last-changed=$(date +%s) current-brightness={}"
+      :hexpand true
+      :value brightness
+      :min 0
+      :max 101
+      :round-digits 0
+      :active true
+      :tooltip current-brightness
+      )
+    (label
+      :class "bright-label"
+      :text current-brightness
+      :hexpand false
+    )))
