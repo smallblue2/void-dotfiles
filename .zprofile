@@ -32,4 +32,4 @@ export GTK_THEME=Gruvbox-Material-Dark-HIDPI
 [[ -z $SSH_AUTH_SOCK ]] && eval "$(ssh-agent -s)" >/dev/null
 ssh-add -q ~/.ssh/id_ed25519 >/dev/null
 
-dbus-run-session sway
+dbus-run-session sway --unsupported-gpu

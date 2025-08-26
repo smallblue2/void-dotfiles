@@ -26,3 +26,10 @@ precmd() { vcs_info }
 zstyle ':vcs_info:git:*' formats '%b '
 setopt PROMPT_SUBST
 PROMPT='%F{green}%* %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f$ '
+
+# bun completions
+[ -s "/home/niall/.bun/_bun" ] && source "/home/niall/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
